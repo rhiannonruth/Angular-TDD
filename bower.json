@@ -1,0 +1,20 @@
+{
+  "name": "further_more_javascript",
+  "description": "Same challenge as before, but tested.",
+  "main": "index.js",
+  "authors": [
+    "olmesm <olmesm@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/olmesm/further_more_javascript",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}
