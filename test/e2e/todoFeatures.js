@@ -4,9 +4,20 @@ describe('Todos tracker', function(){
     expect(browser.getTitle()).toEqual('Todos App');
   });
 
-  it('has a todo', function(){
+  // it('has two todos', function(){
+  //   browser.get('/');
+  //   // var todo = element(by.css('#todo'));
+  //   var rows = element.all(by.repeater('todo in todos'));
+  //   // These are the same
+  //   // var todo = $('#todo');
+  //   expect(rows.getText()).toEqual(['ToDo1', 'ToDo2']);
+  //   // expect(todo.getText()).toEqual('ToDo2');
+  // });
+
+  it('has several ToDos', function() {
     browser.get('/');
-    var todo = element(by.css('#todo'));
-    expect(todo.getText()).toEqual('ToDo1');
+    var todos = $$('#todos p');
+    expect(todos.first().getText()).toEqual('ToDo1: completed');
+    expect(todos.last().getText()).toEqual('ToDo2: not completed');
   });
 });
