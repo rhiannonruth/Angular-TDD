@@ -21,4 +21,11 @@ describe('ToDoController', function() {
     var lastItem = {text: 'Wash the dog', completed: false};
     expect(ctrl.todos.slice(-1)).toContain(lastItem);
   });
+
+  it('can remove items', function(){
+    expect(ctrl.todos.slice(-1)).toContain({text: "ToDo2", completed: true});
+    ctrl.removeLastToDo();
+    expect(ctrl.todos.slice(-1)).not.toContain({text: "ToDo2", completed: true});
+    expect(ctrl.todos.slice(-1)).toContain({text: "ToDo1", completed: false});
+  });
 });

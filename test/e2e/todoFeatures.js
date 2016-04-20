@@ -22,4 +22,11 @@ describe('Todos tracker', function() {
     var lastTodo = findItems().last().getText();
     expect(lastTodo).toContain(toDoText + ': not completed');
   });
+
+  it('can remove last item', function(){
+    browser.get('/');
+    var itemCount = findItems().count();
+    $('#remove-todo').click();
+    expect(findItems().count()).toBeLessThan(itemCount);
+  });
 });
