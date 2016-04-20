@@ -15,4 +15,10 @@ describe('ToDoController', function() {
 
     expect(ctrl.todos).toEqual(todos);
   });
+
+  it('allows new items to be created', function() {
+    ctrl.addToDo('Wash the dog');
+    var lastItem = {text: 'Wash the dog', completed: false};
+    expect(ctrl.todos.slice(-1)).toContain(lastItem);
+  });
 });

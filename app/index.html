@@ -12,6 +12,11 @@
       <p ng-repeat="todo in controller.todos">
         {{ todo.text }}: {{ todo.completed? 'completed' : 'not completed' }}
       </p>
+      <hr>
+
+      <input type="text" id="new-todo" ng-model="toDoText" value="Enter a new Item"> </input>
+      <button type="button" id="add-todo" ng-click="controller.addToDo(toDoText)">Add Item</button>
+
     </div>
   </body>
 </html>
