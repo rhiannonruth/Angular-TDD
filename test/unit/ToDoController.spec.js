@@ -22,10 +22,16 @@ describe('ToDoController', function() {
     expect(ctrl.todos.slice(-1)).toContain(lastItem);
   });
 
-  it('can remove items', function(){
-    expect(ctrl.todos.slice(-1)).toContain({text: "ToDo2", completed: true});
+  // it('can remove items', function(){
+  //   expect(ctrl.todos.slice(-1)).toContain({text: "ToDo2", completed: true});
+  //   ctrl.removeLastToDo();
+  //   expect(ctrl.todos.slice(-1)).not.toContain({text: "ToDo2", completed: true});
+  //   expect(ctrl.todos.slice(-1)).toContain({text: "ToDo1", completed: false});
+  // });
+
+  it('removes the last todo', function() {
+    initialCount = ctrl.todos.length;
     ctrl.removeLastToDo();
-    expect(ctrl.todos.slice(-1)).not.toContain({text: "ToDo2", completed: true});
-    expect(ctrl.todos.slice(-1)).toContain({text: "ToDo1", completed: false});
+    expect(ctrl.todos.length).toEqual(initialCount - 1);
   });
 });
